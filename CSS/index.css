@@ -1,0 +1,638 @@
+/*overall styling*/
+
+
+
+@font-face {
+    font-family: GoudyBookletter1911;
+
+    src: url(GoudyBookletter1911.otf);
+    
+}
+
+.image {
+    text-align: left;
+}
+.head1 {
+    font-family: 'GoudyBookletter1911';
+}
+
+img {
+    padding: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+   
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  
+}
+
+.grid div {
+    
+    padding: 20px;
+}
+
+/*to define html file as a grid*/
+
+/*.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr .5fr .5fr 4fr 3fr 3fr 3fr 3fr;
+    grid-template-areas: 
+        "head1 head1 head1 head1 head1 head1 head1 head1 head1 head1 head1 head1"
+        "navBar navBar navBar navBar navBar navBar navBar navBar navBar navBar navBar navBar"
+        "links links articles articles articles articles articles articles articles articles articles articles articles articles"
+        "links links articles articles articles articles articles articles articles articles articles articles articles articles"
+         "links links articles articles articles articles articles articles articles articles articles articles articles articles"
+        "links links articles articles articles articles articles articles articles articles articles articles articles articles"
+        "links links ads ads ads ads ads ads ads ads ads ads"
+        "footerBar footerBar footerBar footerBar footerBar footerBar footerBar footerBar footerBar footerBar footerBar footerBar";
+}
+*/
+
+
+
+  .grid > div {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+        "h"
+        "n"
+        "c"
+        "a"
+        "f"
+        "cu";
+  
+}
+
+.grid > navBar {
+    position:fixed;
+    right: 0
+    top: 0;
+    min-width: 200px;
+}
+
+@media only screen and (min-width: 480px) {
+    .grid {
+        grid-template-areas:
+            "h h h h h h h h h h h h"
+            "n n n n n n n n n n n n"
+            "c c c c c c c c c c cu cu"
+            "a a a a a a a a a a a a"
+            "f f f f f f f f f f f f";
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    
+  .grid {
+        grid-template-areas:
+            "h h h h h h"
+            "n n n n n n"
+            "c c c c c c"
+            "a a a a a a"
+            "cu cu cu cu"
+            "f f f f f f";
+    } 
+}
+
+
+.summary {
+    grid-area: cu;
+}
+
+
+.head1 {
+  grid-area: h;
+}
+
+.navBar {
+  grid-area: n;
+
+}
+
+.content {
+  grid-area: c;
+  flex-wrap: wrap;
+  /*text-align: center;
+  justify-content: center;*/
+}
+
+.ads {
+  grid-area: a;
+}
+
+.footerBar {
+  grid-area: f;
+}
+
+.grid {
+    background-color: black;
+}
+
+.navBar {
+    background-color: red;
+    text-align: center;
+}
+
+
+.footerBar {
+    background-color: red;
+}
+
+
+.content > * {
+    grid-column: 2;
+    grid-column-end: 3;
+  
+     min-width: 0;
+}
+
+.content {
+    display: grid;
+      grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.navBar > * {
+    grid-column: 2;
+     min-width: 0;
+}
+
+
+.ads > * {
+    grid-column: 2;
+     min-width: 0;
+}
+
+.summary > * {
+     grid-column: 3;
+     min-width: 0;
+}
+
+
+a {
+    color: white;
+}
+
+
+
+
+a:visited {
+    color: lightseagreen;
+}
+
+a:hover {
+    color: lightseagreen;
+}
+
+a:active { 
+    background-color: black;
+}
+
+a:active {
+    color: yellow;
+} 
+
+
+
+
+.home {
+    grid-area: home;
+}
+
+.ab {
+    grid-area: home;
+}
+
+.abc {
+    grid-area: abc;
+}
+
+.abcd {
+    grid-area: abcd;
+}
+
+.abcde {
+    grid-area: abcde;
+}
+
+.abcdef {
+    grid-area: abcdef;
+}
+
+.abcdefg {
+    grid-area: abcdefg;
+}
+
+.abcdefgh {
+    grid-area: abcdefgh;
+}
+
+.abcdefghi {
+    grid-area: abcdefghi;
+}
+
+.abcdefghij {
+    grid-area: abcdefghij;
+}
+
+
+.gridNav {
+    display: grid
+    /*grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;*/
+    grid-row-gap: 2em;
+    grid-template-areas: 
+    "home 
+    "ab"
+    "abc" 
+    "abcd" 
+    "abcde"
+    "abcdef" 
+    "abcdefg"
+    "abcdefgh"
+    "abcdefghi"
+    "abcdefghij";
+    padding-top: 1em;
+    line-height: 2em;
+    text-transform: uppercase;
+}
+
+.gridNav > li {
+    justify-content: center;
+    text-align: center;
+    flex: 1 1 50%;
+    
+}
+
+@media all and (max-width: 480px) {
+  .gridNav {
+    flex-wrap: wrap;
+  }
+  .gridNav > li {
+    flex: 1 1 50%;
+  }
+}
+
+
+.gridNav {
+    list-style-type:none;
+    text-align: center;
+    align-content: center;
+}
+
+#home {
+    padding: 0 5px 0 5px;
+}
+
+#ab {
+     padding: 0 5px 0 5px;
+}
+
+#abc {
+     padding: 0 5px 0 5px;
+}
+
+#abcd {
+     padding: 0 5px 0 5px;
+}
+
+#abcde {
+     padding: 0 5px 0 5px;
+}
+
+#abcdef {
+     padding: 0 5px 0 5px;
+}
+
+#abcdefg {
+     padding: 0 5px 0 5px;
+}
+
+#abcdefgh {
+     padding: 0 5px 0 5px;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: red;
+    text-align: center;
+}
+
+li {
+    float: left;
+    text-align: center;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+li a:hover {
+    background-color: black;
+}
+
+
+
+header {
+    background-color: black;
+    margin-left:auto;
+    margin-right:auto;
+    clear: both;
+    text-align: center;
+             
+}
+
+h1.header {
+    font-size: 100px;
+    background-color: black;
+    color: #F4F4F3;
+    text-align: center;      
+}
+
+h1 {
+    color: white;
+}
+
+
+
+footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    background-color: red;
+    color: white;
+    clear: both;
+    text-align: center;
+}
+
+footer p {
+    font-size: 15px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+.row {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 25%; 
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+    
+    @media (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+
+p {
+    color: white;
+}
+
+h3 {
+    font-size: 25px;
+    color: white;
+}
+
+p {
+    font-size: 20px;
+      font-family: JillianGoudy;
+}
+
+
+div#cuardaigh input[type=text] {
+    background-color: black;
+    border-color: #730938;
+    border-width: thick;
+    border-style: inset;
+    color: bisque;
+    font-size: 15px;
+   
+}
+
+/*.grid > figure {
+    width: 100%;
+    height: auto;
+}*/
+
+figure {
+    margin: 0;
+}
+
+figure figcaption {
+    color: #666;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.grid > figure {
+    grid-column: 1 / -1;
+    margin: 20px 0;
+}
+
+
+
+
+.quote {
+    
+    color: white;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+    /*grid-column: 3 / 5;
+    grid-column: 0 / 1;
+    padding-left: 10px;
+   
+    border-left: 3px solid black;*/
+}
+
+h1 {
+    color: white;
+}
+
+.file {
+    color: indianred;
+    }
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+
+#row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+/*#column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+  justify-content: center;
+}*/
+
+#column img {
+  margin-top: 8px;
+  vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  #column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  #column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/*.content {
+    align-items: center;
+    justify-content: center;
+}*/
+
+
+.title
+{
+    color: white;
+    text-decoration: underline;
+}
+
+li {
+    text-decoration: underline;
+}
+
+
+
+
+ul.gridNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul.gridNav li {float: left;}
+
+ul.gridNav li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+ul.gridNav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.gridNav li.right, 
+    ul.gridNav li {float: none;}
+}
+
+.top {
+    text-align: center;
+}
+
+
+div.p {
+    text-indent: 50px;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
